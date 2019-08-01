@@ -1,25 +1,28 @@
-for i in range(100000):
-    # generate a string value test which is input string by doing stuff
-    test = ''
+import logicfile
+
+for i in range(1):
+    # generate a dictionary which has input string by doing stuff
+    testDict = logicfile.inputLogic()
+    test = testDict['string']
 
     # the weird multiline comment is just to make it easier to switch between
     # testing the logic and writing to files
-    '''print(test)
+    print(test)
     r'''
     f = open(r'C:\Users\ksdfg\Desktop\rsc\input\input' + str(i) + '.txt', 'w')
     f.write(test)
-    # '''
+    '''
 
     # generate a string value res which is output string by doing stuff
-    res = ''
+    res = logicfile.outputLogic(testDict)
 
     # the weird multiline comment is just to make it easier to switch between
     # testing the logic and writing to files
-    '''print(res)
+    print(res)
     r'''
     f = open(r'C:\Users\ksdfg\Desktop\rsc\output\output' + str(i) + '.txt', 'w')
     f.write(res)
-    # '''
+    '''
 
 r'''
 The format of the zip file is that it should have two folders - input (with all
