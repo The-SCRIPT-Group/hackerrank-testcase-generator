@@ -14,5 +14,6 @@ from random import randint
 def inputLogic():
     return {'string': 'meow', 'arg': 'nyaa'}
 
+
 def outputLogic(testDict):
     return 'result'
