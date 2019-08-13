@@ -35,4 +35,10 @@ the input test files) and output (with all the output test files). akhilnarang,
 zip the two folders input and output (in C:\Users\ksdfg\Desktop\rsc for me)
 into a single zip file that is to be uploaded.
 Someone check out if there's a hackerrank api for uploading this zip file.
+
+
+zip_file = zipfile.ZipFile(r'C:\Users\ksdfg\Desktop\rsc\fib.zip', 'w', zipfile.ZIP_DEFLATED)
+zip_file.write(r'C:\Users\ksdfg\Desktop\rsc\input')
+zip_file.write(r'C:\Users\ksdfg\Desktop\rsc\output')
+zip_file.close()
 '''
