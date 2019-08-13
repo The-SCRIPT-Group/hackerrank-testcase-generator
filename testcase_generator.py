@@ -1,4 +1,5 @@
 import logicfile
+import zipfile
 
 for i in range(1):
     # generate a dictionary which has input string by doing stuff
@@ -23,6 +24,10 @@ for i in range(1):
     f = open(r'C:\Users\ksdfg\Desktop\rsc\output\output' + str(i) + '.txt', 'w')
     f.write(res)
     '''
+    zip_file = zipfile.ZipFile('testcases.zip', 'w', zipfile.ZIP_DEFLATED)
+    zip_file.write('C:\Users\ksdfg\Desktop\rsc\input\input')
+    zip_file.write('C:\Users\ksdfg\Desktop\rsc\output\output')
+    zip_file.close()
 
 r'''
 The format of the zip file is that it should have two folders - input (with all
