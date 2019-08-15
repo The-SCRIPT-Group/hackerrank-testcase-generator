@@ -1,45 +1,39 @@
 import logicfile
 import zipfile
+import os
 
-zip_file = zipfile.ZipFile('C:\Users\ksdfg\Desktop\rsc\testcases.zip', 'w', zipfile.ZIP_DEFLATED)
-
-for i in range(1):
+for i in range(100):
     # generate a dictionary which has input string by doing stuff
     testDict = logicfile.inputLogic()
     test = testDict['string']
 
     # the weird multiline comment is just to make it easier to switch between
     # testing the logic and writing to files
-    print(test)
+    '''print(test)
     r'''
-    f = open(r'C:\Users\ksdfg\Desktop\rsc\input\input' + str(i) + '.txt', 'w')
+    f = open(r'path\to\input\input' + str(i) + '.txt', 'w')
     f.write(test)
-    '''
+    # '''
 
     # generate a string value res which is output string by doing stuff
     res = logicfile.outputLogic(testDict)
 
     # the weird multiline comment is just to make it easier to switch between
     # testing the logic and writing to files
-    print(res)
+    '''print(res)
     r'''
-    f = open(r'C:\Users\ksdfg\Desktop\rsc\output\output' + str(i) + '.txt', 'w')
+    f = open(r'path\to\output\output' + str(i) + '.txt', 'w')
     f.write(res)
-    '''
-    zip_file.write('C:\Users\ksdfg\Desktop\rsc\input\input' + str(i) + '.txt')
-    zip_file.write('C:\Users\ksdfg\Desktop\rsc\output\output' + str(i) + '.txt')
 
-zip_file.close()
-r'''
-The format of the zip file is that it should have two folders - input (with all
-the input test files) and output (with all the output test files). akhilnarang,
-zip the two folders input and output (in C:\Users\ksdfg\Desktop\rsc for me)
-into a single zip file that is to be uploaded.
-Someone check out if there's a hackerrank api for uploading this zip file.
+# write all test cases (input and output) to zipfile
+with zipfile.ZipFile(r'path\to\fib.zip', 'w', zipfile.ZIP_DEFLATED) as zip_file:
+    # walk through input folder, and write all files to zip file as 'input\inputx.txt'
+    for root, directories, files in os.walk(r'path\to\input'):
+        for file in files:
+            zip_file.write(os.path.join(root, file), os.path.join('input', file))
 
-
-zip_file = zipfile.ZipFile(r'C:\Users\ksdfg\Desktop\rsc\fib.zip', 'w', zipfile.ZIP_DEFLATED)
-zip_file.write(r'C:\Users\ksdfg\Desktop\rsc\input')
-zip_file.write(r'C:\Users\ksdfg\Desktop\rsc\output')
-zip_file.close()
-'''
+    # walk through output folder, and write all files to zip file as 'output\outputx.txt'
+    for root, directories, files in os.walk(r'path\to\output'):
+        for file in files:
+            zip_file.write(os.path.join(root, file), os.path.join('output', file))
+# '''
