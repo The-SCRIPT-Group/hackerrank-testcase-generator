@@ -2,14 +2,14 @@ import logicfile
 import zipfile
 import os
 
-for i in range(100):
+for i in range(1):
     # generate a dictionary which has input string by doing stuff
     testDict = logicfile.inputLogic()
     test = testDict['string']
 
     # the weird multiline comment is just to make it easier to switch between
     # testing the logic and writing to files
-    '''print(test)
+    print('input :\n', test, sep='\n')
     r'''
     f = open(r'path\to\input\input' + str(i) + '.txt', 'w')
     f.write(test)
@@ -20,7 +20,7 @@ for i in range(100):
 
     # the weird multiline comment is just to make it easier to switch between
     # testing the logic and writing to files
-    '''print(res)
+    print('\noutput :\n', res, sep='\n')
     r'''
     f = open(r'path\to\output\output' + str(i) + '.txt', 'w')
     f.write(res)
