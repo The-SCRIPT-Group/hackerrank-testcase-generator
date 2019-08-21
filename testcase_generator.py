@@ -9,7 +9,7 @@ for i in range(1):
 
     # the weird multiline comment is just to make it easier to switch between
     # testing the logic and writing to files
-    print('input :\n', test, sep='\n')
+    print('\ninput :\n', test, sep='\n')
     r'''
     f = open(r'path\to\input\input' + str(i) + '.txt', 'w')
     f.write(test)
