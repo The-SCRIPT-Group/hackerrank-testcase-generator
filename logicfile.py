@@ -8,8 +8,3 @@ from random import randint, choice
 
 def inputLogic():
     return "meow", 'nyan'
-
-
-def bov1():
-    var = "".join([choice("DOPE") for _ in range(randint(0, 10000))])
-    return str(len(var)) + "\n" + var, 'bov1'
