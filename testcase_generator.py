@@ -3,11 +3,16 @@ import zipfile
 import os
 from subprocess import Popen, PIPE, STDOUT
 
+# set to false if you just want to print generated input and output to test stuff
+# set to true if you want to generate zip file
 to_write = False
 
+# path to folder where input and output folders are already created and zip files will be stored
 testcase_folder = "path/to/folder"
 
 for i in range(1):
+    print("test case", i)
+
     # generate input string by doing stuff
     test, name = logicfile.inputLogic()
 
@@ -32,6 +37,10 @@ for i in range(1):
             f.write(res)
     else:
         print('\noutput :\n', res, sep='\n')
+
+    print(
+        "-----------------------------------------------------------------------------------------"
+    )
 
 if to_write:
     # write all test cases (input and output) to zipfile
