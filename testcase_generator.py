@@ -9,7 +9,7 @@ testcase_folder = "path/to/folder"
 
 for i in range(1):
     # generate input string by doing stuff
-    test, name = logicfile.bov1()
+    test, name = logicfile.inputLogic()()
 
     if to_write:
         with open(f'{testcase_folder}/input/input' + str(i) + '.txt', 'w') as f:
